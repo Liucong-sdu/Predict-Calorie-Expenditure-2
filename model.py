@@ -18,7 +18,7 @@ class cfg:
     testfilepath = "test_processed.csv"
     outfilepath = "myoutput"
     state = 8
-    n_iter = 10  # 每个模型的参数搜索次数
+    n_iter = 20  # 每个模型的参数搜索次数
     early_stop_rounds = 50
 
 class future_engineer:
@@ -41,7 +41,7 @@ class HyperparameterSearch:
     @staticmethod
     def lgbm_search():
         param_dist = {
-            'learning_rate': [0.012, 0.016,0.014,0.018,0.01, 0.02],
+            'learning_rate': [0.005,0.006,0.007,0.008,0.009,0.01],
             'max_depth': [4,5,6,7,8],
             'colsample_bytree': [0.8, 0.9, 0.95],
             'reg_alpha': [0.001, 0.01, 0.1],
@@ -54,7 +54,7 @@ class HyperparameterSearch:
             score_list = []
             model = LGBMR(
                 objective="regression",
-                n_estimators=1000,
+                n_estimators=10000,
                 **params,
                 random_state=cfg.state,
                 verbosity=-1
@@ -84,7 +84,7 @@ class HyperparameterSearch:
     @staticmethod
     def xgb_search():
         param_dist = {
-            'learning_rate': [0.012, 0.016,0.014,0.018,0.01, 0.02],
+            'learning_rate': [0.005,0.006,0.007,0.008,0.009,0.01],
             'max_depth': [4, 5,6, 7,8],
             'colsample_bytree': [0.8, 0.9, 0.95],
             'reg_alpha': [0.001, 0.01, 0.1],
@@ -97,7 +97,7 @@ class HyperparameterSearch:
             score_list = []
             model = XGBR(
                 objective="reg:squarederror",
-                n_estimators=1000,
+                n_estimators=10000,
                 
                 **params,
                 random_state=cfg.state,
@@ -132,7 +132,7 @@ class HyperparameterSearch:
     @staticmethod
     def cat_search():
         param_dist = {
-                'learning_rate': [0.012, 0.016,0.014,0.018,0.01, 0.02],
+                'learning_rate': [0.005,0.006,0.007,0.008,0.009,0.01],
                 'depth': [4,5, 6,7, 8],  # 替换max_depth → depth[3,5,7](@ref)
                 
                 'l2_leaf_reg': [0.1, 0.5, 1.0, 10]  # 扩展范围[3](@ref)
@@ -144,7 +144,7 @@ class HyperparameterSearch:
             score_list = []
             model = CBR(
                 loss_function="RMSE",
-                iterations=1000,
+                iterations=10000,
                 **params,
                 random_state=cfg.state,
                 verbose=0,
