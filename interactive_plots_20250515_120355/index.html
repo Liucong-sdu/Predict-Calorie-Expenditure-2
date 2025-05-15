@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>卡路里消耗预测 - 3D交互式可视化</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+h1 { color: #2c3e50; }
+h2 { color: #3498db; margin-top: 30px; }
+ul { list-style-type: none; padding: 0; }
+li { margin: 10px 0; padding: 10px; background-color: #f5f5f5; border-radius: 5px; }
+a { color: #3498db; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.info { color: #7f8c8d; font-size: 0.9em; margin-top: 5px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #f2f2f2; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+.tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; }
+.tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; }
+.tab button:hover { background-color: #ddd; }
+.tab button.active { background-color: #ccc; }
+.tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; }
+</style>
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</head>
+<body>
+<h1>卡路里消耗预测 - 3D交互式可视化</h1>
+<p>数据集大小: 10000 个样本 (从原始数据集中随机采样)</p>
+<p>生成时间: 2025-05-15 12:04:03</p>
+<h2>特征与目标变量的相关性</h2>
+<table>
+<tr><th>特征</th><th>与卡路里的相关性</th></tr>
+<tr><td>Duration</td><td>0.9599</td></tr>
+<tr><td>Heart_Rate</td><td>0.9086</td></tr>
+<tr><td>Body_Temp</td><td>0.7650</td></tr>
+<tr><td>Age</td><td>0.1535</td></tr>
+<tr><td>Body_Fat_Percentage</td><td>0.0968</td></tr>
+<tr><td>BMI</td><td>0.0480</td></tr>
+<tr><td>Weight</td><td>0.0166</td></tr>
+<tr><td>Sex_female</td><td>0.0115</td></tr>
+<tr><td>Sex_male</td><td>0.0115</td></tr>
+<tr><td>Height</td><td>0.0029</td></tr>
+</table>
+<div class="tab">
+<button class="tablinks" onclick="openTab(event, '所有数据')">所有数据</button>
+</div>
+<div id="所有数据" class="tabcontent" style="display: block;">
+<h2>所有数据数据的3D交互式图表</h2>
+<ul>
+<li><a href="所有数据_Duration_vs_Heart_Rate_vs_Calories.html" target="_blank">Duration vs Heart_Rate vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Heart_Rate (0.9086)</div></li>
+<li><a href="所有数据_Duration_vs_Body_Temp_vs_Calories.html" target="_blank">Duration vs Body_Temp vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Body_Temp (0.7650)</div></li>
+<li><a href="所有数据_Duration_vs_Age_vs_Calories.html" target="_blank">Duration vs Age vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Age (0.1535)</div></li>
+<li><a href="所有数据_Duration_vs_Body_Fat_Percentage_vs_Calories.html" target="_blank">Duration vs Body_Fat_Percentage vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Body_Fat_Percentage (0.0968)</div></li>
+<li><a href="所有数据_Duration_vs_BMI_vs_Calories.html" target="_blank">Duration vs BMI vs Calories</a>
+<div class="info">相关性: Duration (0.9599), BMI (0.0480)</div></li>
+<li><a href="所有数据_Duration_vs_Weight_vs_Calories.html" target="_blank">Duration vs Weight vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Weight (0.0166)</div></li>
+<li><a href="所有数据_Duration_vs_Sex_female_vs_Calories.html" target="_blank">Duration vs Sex_female vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_Duration_vs_Sex_male_vs_Calories.html" target="_blank">Duration vs Sex_male vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Duration_vs_Height_vs_Calories.html" target="_blank">Duration vs Height vs Calories</a>
+<div class="info">相关性: Duration (0.9599), Height (0.0029)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Body_Temp_vs_Calories.html" target="_blank">Heart_Rate vs Body_Temp vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Body_Temp (0.7650)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Age_vs_Calories.html" target="_blank">Heart_Rate vs Age vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Age (0.1535)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Body_Fat_Percentage_vs_Calories.html" target="_blank">Heart_Rate vs Body_Fat_Percentage vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Body_Fat_Percentage (0.0968)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_BMI_vs_Calories.html" target="_blank">Heart_Rate vs BMI vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), BMI (0.0480)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Weight_vs_Calories.html" target="_blank">Heart_Rate vs Weight vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Weight (0.0166)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Sex_female_vs_Calories.html" target="_blank">Heart_Rate vs Sex_female vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Sex_male_vs_Calories.html" target="_blank">Heart_Rate vs Sex_male vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Heart_Rate_vs_Height_vs_Calories.html" target="_blank">Heart_Rate vs Height vs Calories</a>
+<div class="info">相关性: Heart_Rate (0.9086), Height (0.0029)</div></li>
+<li><a href="所有数据_Body_Temp_vs_Age_vs_Calories.html" target="_blank">Body_Temp vs Age vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), Age (0.1535)</div></li>
+<li><a href="所有数据_Body_Temp_vs_Body_Fat_Percentage_vs_Calories.html" target="_blank">Body_Temp vs Body_Fat_Percentage vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), Body_Fat_Percentage (0.0968)</div></li>
+<li><a href="所有数据_Body_Temp_vs_BMI_vs_Calories.html" target="_blank">Body_Temp vs BMI vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), BMI (0.0480)</div></li>
+<li><a href="所有数据_Body_Temp_vs_Weight_vs_Calories.html" target="_blank">Body_Temp vs Weight vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), Weight (0.0166)</div></li>
+<li><a href="所有数据_Body_Temp_vs_Sex_female_vs_Calories.html" target="_blank">Body_Temp vs Sex_female vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_Body_Temp_vs_Sex_male_vs_Calories.html" target="_blank">Body_Temp vs Sex_male vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Body_Temp_vs_Height_vs_Calories.html" target="_blank">Body_Temp vs Height vs Calories</a>
+<div class="info">相关性: Body_Temp (0.7650), Height (0.0029)</div></li>
+<li><a href="所有数据_Age_vs_Body_Fat_Percentage_vs_Calories.html" target="_blank">Age vs Body_Fat_Percentage vs Calories</a>
+<div class="info">相关性: Age (0.1535), Body_Fat_Percentage (0.0968)</div></li>
+<li><a href="所有数据_Age_vs_BMI_vs_Calories.html" target="_blank">Age vs BMI vs Calories</a>
+<div class="info">相关性: Age (0.1535), BMI (0.0480)</div></li>
+<li><a href="所有数据_Age_vs_Weight_vs_Calories.html" target="_blank">Age vs Weight vs Calories</a>
+<div class="info">相关性: Age (0.1535), Weight (0.0166)</div></li>
+<li><a href="所有数据_Age_vs_Sex_female_vs_Calories.html" target="_blank">Age vs Sex_female vs Calories</a>
+<div class="info">相关性: Age (0.1535), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_Age_vs_Sex_male_vs_Calories.html" target="_blank">Age vs Sex_male vs Calories</a>
+<div class="info">相关性: Age (0.1535), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Age_vs_Height_vs_Calories.html" target="_blank">Age vs Height vs Calories</a>
+<div class="info">相关性: Age (0.1535), Height (0.0029)</div></li>
+<li><a href="所有数据_Body_Fat_Percentage_vs_BMI_vs_Calories.html" target="_blank">Body_Fat_Percentage vs BMI vs Calories</a>
+<div class="info">相关性: Body_Fat_Percentage (0.0968), BMI (0.0480)</div></li>
+<li><a href="所有数据_Body_Fat_Percentage_vs_Weight_vs_Calories.html" target="_blank">Body_Fat_Percentage vs Weight vs Calories</a>
+<div class="info">相关性: Body_Fat_Percentage (0.0968), Weight (0.0166)</div></li>
+<li><a href="所有数据_Body_Fat_Percentage_vs_Sex_female_vs_Calories.html" target="_blank">Body_Fat_Percentage vs Sex_female vs Calories</a>
+<div class="info">相关性: Body_Fat_Percentage (0.0968), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_Body_Fat_Percentage_vs_Sex_male_vs_Calories.html" target="_blank">Body_Fat_Percentage vs Sex_male vs Calories</a>
+<div class="info">相关性: Body_Fat_Percentage (0.0968), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Body_Fat_Percentage_vs_Height_vs_Calories.html" target="_blank">Body_Fat_Percentage vs Height vs Calories</a>
+<div class="info">相关性: Body_Fat_Percentage (0.0968), Height (0.0029)</div></li>
+<li><a href="所有数据_BMI_vs_Weight_vs_Calories.html" target="_blank">BMI vs Weight vs Calories</a>
+<div class="info">相关性: BMI (0.0480), Weight (0.0166)</div></li>
+<li><a href="所有数据_BMI_vs_Sex_female_vs_Calories.html" target="_blank">BMI vs Sex_female vs Calories</a>
+<div class="info">相关性: BMI (0.0480), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_BMI_vs_Sex_male_vs_Calories.html" target="_blank">BMI vs Sex_male vs Calories</a>
+<div class="info">相关性: BMI (0.0480), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_BMI_vs_Height_vs_Calories.html" target="_blank">BMI vs Height vs Calories</a>
+<div class="info">相关性: BMI (0.0480), Height (0.0029)</div></li>
+<li><a href="所有数据_Weight_vs_Sex_female_vs_Calories.html" target="_blank">Weight vs Sex_female vs Calories</a>
+<div class="info">相关性: Weight (0.0166), Sex_female (0.0115)</div></li>
+<li><a href="所有数据_Weight_vs_Sex_male_vs_Calories.html" target="_blank">Weight vs Sex_male vs Calories</a>
+<div class="info">相关性: Weight (0.0166), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Weight_vs_Height_vs_Calories.html" target="_blank">Weight vs Height vs Calories</a>
+<div class="info">相关性: Weight (0.0166), Height (0.0029)</div></li>
+<li><a href="所有数据_Sex_female_vs_Sex_male_vs_Calories.html" target="_blank">Sex_female vs Sex_male vs Calories</a>
+<div class="info">相关性: Sex_female (0.0115), Sex_male (0.0115)</div></li>
+<li><a href="所有数据_Sex_female_vs_Height_vs_Calories.html" target="_blank">Sex_female vs Height vs Calories</a>
+<div class="info">相关性: Sex_female (0.0115), Height (0.0029)</div></li>
+<li><a href="所有数据_Sex_male_vs_Height_vs_Calories.html" target="_blank">Sex_male vs Height vs Calories</a>
+<div class="info">相关性: Sex_male (0.0115), Height (0.0029)</div></li>
+</ul>
+</div>
+<p>注意: 点击链接将在新标签页中打开交互式3D图表。您可以旋转、缩放和平移图表以查看不同角度。</p>
+<script>document.getElementsByClassName("tablinks")[0].className += " active";</script>
+</body>
+</html>

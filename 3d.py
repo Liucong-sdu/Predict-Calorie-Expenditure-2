@@ -32,7 +32,7 @@ def safe_filename(name):
 try:
     # 读取CSV文件
     print("正在读取数据...")
-    df = pd.read_csv('train.csv')
+    df = pd.read_csv('train_processed.csv')
     print(f"成功读取数据，共 {len(df)} 行")
     
     # 数据采样 - 使用10000个随机样本点
